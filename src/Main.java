@@ -4,13 +4,14 @@ public class Main {
 
         int monthlySavings = 15000;
         int total = 0;
-        int month = 0;
-        for (; total <= 2_459_000; month++) {
+
+        for (int month = 0; total <= 2_459_000; month++) {
             total += monthlySavings;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей");
         }
-        System.out.println(total);
-        System.out.println(month);
+
+        System.out.println("Общая сумма накоплений: " + total);
+        System.out.println("Количество месяцев: " + (total / monthlySavings));
 
         int i = 1;
         while (i <= 10) {
@@ -42,12 +43,11 @@ public class Main {
             monthDeposit++;
             deposit = deposit + 15000;
             deposit = deposit + deposit * 7 / 100;
-            if (monthDeposit % 6 == 0)
-            {
+            if (monthDeposit % 6 == 0) {
                 System.out.println("Месяц " + monthDeposit + " накоплено: " + deposit);
             }
         }
-        int monthlyDeposit= 0;
+        int monthlyDeposit = 0;
         int oneMonth = 0;
         while (oneMonth <= 108) {
             oneMonth++;
@@ -63,11 +63,15 @@ public class Main {
             System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
         }
         int cometaYear = 0;
-        while (cometaYear <2100) {
-            cometaYear=cometaYear + 79;
-            if ( 1800<=cometaYear){
+        int interval = 79;
+
+        while (cometaYear < 2100) {
+            cometaYear += interval;
+            if (cometaYear >= 1800 && cometaYear != 1817 && cometaYear != 2133) {
                 System.out.println(cometaYear);
             }
         }
     }
 }
+
+
